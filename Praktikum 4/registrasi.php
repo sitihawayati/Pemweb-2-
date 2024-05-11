@@ -2,14 +2,14 @@
 $prodi = [
     'SI' => 'Sistem Informasi',
     'TI' => 'Teknik Informatika',
-    'BD' => 'Bisnis Digital'
+    'BD' => 'Bisnis Digital',
 ];
 
-$skills =  [
+$skills = [
     'HTML' => 10,
     'CSS' => 10,
-    'Javascript' => 20,
-    'RWD Bootstrap' => 20,
+    'JavaScript' => 20,
+    'RWD Boostrap' => 20,
     'PHP' => 30,
     'Python' => 30,
     'Java' => 50,
@@ -20,34 +20,48 @@ $domisili = ['Jakarta', 'Depok', 'Bogor', 'Tanggerang', 'Bekasi', 'Lainnya'];
 include_once('top.php');
 include_once('menu.php');
 ?>
-  <div class="container-fluid px-4">
-  <fieldset class="mx-5 border p-4 mt-5">
+<div class="container-fluid px-4">
+    <fieldset class="mx-5 border p-2 mt-5">
         <legend>Form Registrasi IT Club</legend>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <form method="POST" action="proses_registrasi.php">
+        <form method="POST" action="prosesregistrasi.php">
             <div class="form-group row">
-                <label for="nim " class="col-4 col-form-label">NIM</label>
+                <label for="nim" class="col-4 col-form-label">NIM</label>
                 <div class="col-8">
-                    <input id="nim " name="nim" type="text" class="form-control" required="required">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-adn"></i>
+                            </div>
+                        </div>
+                        <input id="nim" name="nim" type="text" class="form-control" required="required">
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="nama " class="col-4 col-form-label">Nama Lengkap</label>
+                <label for="nama" class="col-4 col-form-label">Nama Lengkap</label>
                 <div class="col-8">
-                    <input id="nama " name="nama" type="text" class="form-control" required="required">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-address-book"></i>
+                            </div>
+                        </div>
+                        <input id="nama" name="nama" type="text" class="form-control" required="required">
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-4">Jenis Kelamin</label>
                 <div class="col-8">
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input name="jk" id="jk_0" type="radio" class="custom-control-input" value="Laki - Laki" required="required">
-                        <label for="jk_0" class="custom-control-label">Laki - Laki</label>
+                        <input name="jk" id="jk_0" type="radio" class="custom-control-input" value="laki-laki" required="required">
+                        <label for="jk_0" class="custom-control-label">Laki-laki</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input name="jk" id="jk_1" type="radio" class="custom-control-input" value="Perempuan" required="required">
+                        <input name="jk" id="jk_1" type="radio" class="custom-control-input" value="perempuan" required="required">
                         <label for="jk_1" class="custom-control-label">Perempuan</label>
                     </div>
                 </div>
@@ -77,9 +91,9 @@ include_once('menu.php');
                 <label for="domisili" class="col-4 col-form-label">Domisili</label>
                 <div class="col-8">
                     <select id="domisili" name="domisili" class="custom-select" required="required">
-                    <?php foreach ($domisili as $value) : ?>   
-                        <option value="<?php echo $value ?>"><?php echo $value ?></option>
-                    <?php endforeach; ?>
+                        <?php foreach ($domisili as $value) : ?>
+                            <option value="<?php echo $value ?>"><?php echo $value ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
             </div>
@@ -89,10 +103,10 @@ include_once('menu.php');
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <i class="fa fa-envelope"></i>
+                                <i class="fa fa-gg-circle"></i>
                             </div>
                         </div>
-                        <input id="email" name="email" type="text" class="form-control">
+                        <input id="email" name="email" type="text" class="form-control" required="required">
                     </div>
                 </div>
             </div>
@@ -103,7 +117,7 @@ include_once('menu.php');
             </div>
         </form>
     </fieldset>
-    </div>
+</div>
 
 <?php
 include_once('bottom.php');
